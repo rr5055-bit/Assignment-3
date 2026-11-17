@@ -73,6 +73,7 @@ async function refresh() {
   const values = await Promise.all([
     pool.currentYear(), pool.pricePerLand(), pool.admin(), pool.liquidityInitialized(),
     usdc.balanceOf(account), land.balanceOf(account),
+    usdc.balanceOf(deployment.pool), land.balanceOf(deployment.pool),
   ]);
   [year, price, admin, initialized] = values;
   if (![0n, 5n].includes(year) || price !== (year === 0n ? 1_000_000n : 5_000_000n)) {
@@ -81,6 +82,8 @@ async function refresh() {
   $("chain-year").textContent = year.toString();
   $("wallet-usdc").textContent = formatUnits(values[4], 6);
   $("wallet-land").textContent = values[5].toString();
+  $("pool-usdc").textContent = formatUnits(values[6], 6);
+  $("pool-land").textContent = values[7].toString();
   ready = true;
   render();
 }

@@ -34,6 +34,8 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 .balances { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 30px; }
 .balances > div + div { border-left: 1px solid var(--muted); padding-left: 32px; }
 .balance-label { font-size: 13px; color: var(--pale); }
+.pool-heading { margin-top: 28px; padding-top: 22px; border-top: 1px solid var(--muted); font-size: 15px; font-weight: 650; }
+.pool-balances { margin-top: 14px; }
 .balance { margin-top: 6px; font-size: clamp(28px, 4vw, 42px); font-weight: 600; letter-spacing: -1px; overflow-wrap: anywhere; font-variant-numeric: tabular-nums; }
 .workspace { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; margin-top: 24px; }
 .panel { background: white; border: 1px solid var(--pale); border-radius: 16px; padding: 26px; min-width: 0; }
